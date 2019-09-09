@@ -22,11 +22,12 @@ body {
     align-items: center;
     justify-content: space-between;
     text-align: center;
-    padding: 0 20px;
+    border-bottom: 1px solid #AA9A9C;
 }
 
 .stats-container {
     text-align: right;
+    margin-left: 15px;
 }
 
 .header {
@@ -34,14 +35,76 @@ body {
 }
 
 .stopwatch-container {
+    background-color: #A4A8C8;
+    color: #FAF9FA;
     padding: 10px 0;
-    background-color: #6B87AB;
+}
+
+.stopwatch-container,
+.counter-container {
+    width: 30%;
+}
+
+/* Player styles */
+.player-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.player-container .name {
+    padding-left: 15px;
+    min-height: 50px;
+    flex: 1;
+    border-bottom: 1px solid #AA9A9C;
+    margin: 0;
+    line-height: 50px;
+}
+
+.counter-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #AA9A9C;
     color: #FAF9FA;
 }
 
+.counter-container span {
+    flex: 1;
+    text-align: center;
+}
+
+.counter-btn {
+    background-color: rgba(100,100,100,.3);
+    color: #FAF9FA;
+    border: none;
+    width: 30%;
+    min-height: 100%;
+    border-bottom: 1px solid #AA9A9C;
+}
+
+/* AddPlayer styles */
+.add-player-container {
+    display: flex;
+    flex-direction: row;
+    padding: 10px 0;
+}
+
+.add-player-container input {
+    flex: 1;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.add-player-container button {
+    margin-right: 15px;
+}
+
+
 /* Button styles */
 .btn {
+    background-color: #787b94;
+    color: #FAF9FA;
     border: none;
     margin: 0 2px;
-    border-radius: 4px;
+    padding: 3px;    border-radius: 4px;
 }
