@@ -1,3 +1,7 @@
+* {
+    font-family: 'Nunito', sans-serif;
+}
+
 body {
     height: 100vh;
     width: 100vw;
@@ -8,11 +12,13 @@ body {
 
 /* App container styles */
 .app-container {
-    background-color: #C1E4ED;
-    color: #A4A8C8;
-    min-width: 50vw;
+    background-color: #4c535c;
+    color: #fffbf2;
+    width: 50vw;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 /* Header styles */
@@ -22,7 +28,12 @@ body {
     align-items: center;
     justify-content: space-between;
     text-align: center;
-    border-bottom: 1px solid #AA9A9C;
+}
+
+.header-container,
+.player-container,
+.add-player-container {
+    width: 100%;
 }
 
 .stats-container {
@@ -35,27 +46,46 @@ body {
 }
 
 .stopwatch-container {
-    background-color: #A4A8C8;
+    background-color: #857a7b;
     color: #FAF9FA;
-    padding: 10px 0;
+    padding: 5px 0;
+    border-top-right-radius: 10px;
+    border: none;
+    margin: 4px;
+    border-left: 10px solid #4d4646;
+}
+
+.stopwatch-container p,
+.stopwatch-container h2,
+.stats-container p {
+    margin: 0;
 }
 
 .stopwatch-container,
-.counter-container {
-    width: 30%;
+.counter-container,
+.add-player-container button {
+    width: 200px;
 }
 
 /* Player styles */
 .player-container {
+    background-color: #FAF9FA;
     display: flex;
     flex-direction: row;
+    margin-bottom: 2px;
+}
+
+.player-container:hover .name {
+    border-left: 5px solid rgba(100,102,105,1);
 }
 
 .player-container .name {
     padding-left: 15px;
     min-height: 50px;
     flex: 1;
-    border-bottom: 1px solid #AA9A9C;
+    color: #4c535c;
+    border: 1px solid #FAF9FA;
+    border-left: 5px solid rgba(100,102,105,.75);
     margin: 0;
     line-height: 50px;
 }
@@ -66,6 +96,9 @@ body {
     justify-content: center;
     background-color: #AA9A9C;
     color: #FAF9FA;
+    border: none;
+    border-left: 10px solid #4d4646;
+    border-right: 4px solid #4c535c;
 }
 
 .counter-container span {
@@ -86,25 +119,40 @@ body {
 .add-player-container {
     display: flex;
     flex-direction: row;
-    padding: 10px 0;
+    width: 100%;
+    padding: 4px 0 8px 0;
 }
 
 .add-player-container input {
     flex: 1;
-    margin-left: 15px;
-    margin-right: 15px;
+    border: none;
+    margin: 0;
+    margin-right: 0;
+    padding-left: 2px;
+    border: 1px solid #FAF9FA;
+    border-left: 5px solid rgba(100,102,105,.75);
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
 .add-player-container button {
-    margin-right: 15px;
+    display: block;
+    margin-right: 4px;
+    border: none;
+    background-color: #857a7b;
+    padding: 0;
+    color: #FAF9FA;
+    border-bottom-right-radius: 10px;
+    border-left: 10px solid #4d4646;
+    width: 210px;
 }
-
 
 /* Button styles */
 .btn {
-    background-color: #787b94;
-    color: #FAF9FA;
+    color: #857a7b;
+    background-color: #FAF9FA;
     border: none;
     margin: 0 2px;
-    padding: 3px;    border-radius: 4px;
+    padding: 3px;    
+    border-radius: 4px;
 }

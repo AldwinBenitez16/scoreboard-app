@@ -1,29 +1,23 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import Counter from './Counter';
 
 class Player extends Component {
 
-    state={
-        players: [
-            {
-                name: 'Aldwin'
-            },
-            {
-                name: 'Ivan'
-            },
-            {
-                name: 'Pia'
-            }
-        ]
-    }
+    static propTypes = {
+        players: PropTypes.arrayOf(PropTypes.object),
+        changeScore: PropTypes.func
+    };
 
     render() {
+        const {players, changeScore} = this.props;
+
         return(
-            this.state.players.map( player => {
+            players.map( player => {
                 return (
-                    <div className='player-container'>
+                    <div key={player.id} className='player-container'>
                         <p className='name'>{player.name}</p>
-                        <Counter />
+                        <Counter score={player.score} index={player.id} changeScore={changeScore}/>
                     </div>
                 );
             })

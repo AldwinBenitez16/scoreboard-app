@@ -1,10 +1,11 @@
 import React from 'react';
 
-const Stats = () => {
+const Stats = ({totalPlayers, totalPoints}) => {
     return (
         <div className='stats-container'>
-            <p>Players: 0</p>
-            <p>Total Points: 0</p>
+            {console.log(totalPoints)}
+            <p>Players: {totalPlayers}</p>
+            <p>Total Points: {totalPoints}</p>
         </div>
     );
 }
