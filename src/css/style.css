@@ -1,0 +1,47 @@
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* App container styles */
+.app-container {
+    background-color: #C1E4ED;
+    color: #A4A8C8;
+    min-width: 50vw;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+/* Header styles */
+.header-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.stats-container {
+    text-align: right;
+}
+
+.header {
+    flex: 1;
+}
+
+.stopwatch-container {
+    padding: 10px 0;
+    background-color: #6B87AB;
+    color: #FAF9FA;
+}
+
+/* Button styles */
+.btn {
+    border: none;
+    margin: 0 2px;
+    border-radius: 4px;
+}
