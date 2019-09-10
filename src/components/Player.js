@@ -1,26 +1,27 @@
-import React, {Component} from 'react';
-import PropTypes from 'prop-types';
+import React, {PureComponent} from 'react';
+import {Consumer} from './Context/index';
 import Counter from './Counter';
 
-class Player extends Component {
-
-    static propTypes = {
-        players: PropTypes.arrayOf(PropTypes.object),
-        changeScore: PropTypes.func
-    };
+class Player extends PureComponent {
 
     render() {
-        const {players, changeScore} = this.props;
-
         return(
-            players.map( player => {
-                return (
-                    <div key={player.id} className='player-container'>
-                        <p className='name'>{player.name}</p>
-                        <Counter score={player.score} index={player.id} changeScore={changeScore}/>
-                    </div>
-                );
-            })
+            <Consumer>
+                {({players, actions}) => {
+
+                    return(
+                        players.map( (player, index) => {
+                            return (
+                                <div key={index} className='player-container'>
+                                    <p className='name'>{player.name}</p>
+                                    <button  className='deleteBtn' onClick={() => actions.removePlayer(index)}>X</button>
+                                    <Counter index={index}/>
+                                </div>
+                            );
+                        })
+                    );
+                }}
+            </Consumer>
         );
     }
 }

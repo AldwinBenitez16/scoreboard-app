@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Consumer} from './Context/index';
 
 class AddPlayer extends Component{
     state = {
@@ -7,26 +8,33 @@ class AddPlayer extends Component{
 
     playerInput = React.createRef();
 
-    handleSubmit = () => {
-        this.props.addPlayer(this.playerInput.current.value)
-        this.playerInput.current.value = '';
-    }
-
     render() {
         return (
-            <div className='add-player-container'>
-                <input 
-                type='text' 
-                ref={this.playerInput}
-                />
-                
-                <button  
-                type='submit' 
-                onClick={() => this.handleSubmit()}
-                >
-                Add Player
-                </button>
-            </div>
+            <Consumer>
+                {({players, actions}) => {
+
+                    const handleSubmit = () => {
+                        actions.addPlayer(this.playerInput.current.value)
+                        this.playerInput.current.value = '';
+                    }
+
+                    return(
+                        <div className='add-player-container'>
+                            <input 
+                            type='text' 
+                            ref={this.playerInput}
+                            />
+                            
+                            <button  
+                            type='submit' 
+                            onClick={() => handleSubmit()}
+                            >
+                            Add Player
+                            </button>
+                        </div>
+                    );
+                }}
+            </Consumer>
         );
     }
 }
